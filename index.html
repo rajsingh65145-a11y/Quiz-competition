@@ -16,25 +16,38 @@
 
     <input type="text" id="name" placeholder="Enter Your Name">
 
+    <input type="text" id="class" placeholder="Enter Your Class">
+
+    <input type="text" id="roll" placeholder="Enter Roll Number">
+
     <button onclick="startQuiz()">Start Quiz</button>
 
 </div>
 
 <script>
+
 function startQuiz(){
 
-    let name=document.getElementById("name").value;
+    let name = document.getElementById("name").value;
+    let studentClass = document.getElementById("class").value;
+    let roll = document.getElementById("roll").value;
 
-    if(name==""){
-        alert("Please Enter Your Name");
+
+    if(name === "" || studentClass === "" || roll === ""){
+        alert("Please fill all details");
         return;
     }
 
-    localStorage.setItem("username",name);
+
+    localStorage.setItem("username", name);
+    localStorage.setItem("class", studentClass);
+    localStorage.setItem("roll", roll);
+
 
     window.location.href="quiz.html";
 
 }
+
 </script>
 
 </body>
