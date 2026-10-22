@@ -2,37 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Page</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
+    <main class="container quiz-card-wide">
+        
+        <!-- Top Bar: Question Meta & Countdown Timer -->
+        <div class="quiz-top-bar">
+            <div class="quiz-meta-badge" id="questionCounter">
+                Question <strong id="currentQNum">1</strong> of <span id="totalQNum">50</span>
+            </div>
+            
+            <div class="timer-badge" title="Time Remaining">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span id="timer">30:00</span>
+            </div>
+        </div>
 
-    <h2 id="question"></h2>
+        <!-- Progress Indicator -->
+        <div class="progress">
+            <div id="progressBar"></div>
+        </div>
 
-    <div id="options"></div>
-    <h3 id="timerText"></h3>
-    <div class="nav">
-        <button onclick="prev()">Previous</button>
-        <button onclick="next()">Next</button>
-    </div>
+        <!-- Gujarati Question Statement -->
+        <h2 id="question">Loading question...</h2>
 
-    <button onclick="submitQuiz()" style="margin-top:20px;background:green;">
-        Submit Quiz
-    </button>
+        <!-- Answer Options Stack -->
+        <div id="options">
+            <!-- Dynamically populated options -->
+        </div>
 
-   <h2 id="timer">30:00</h2>
+        <!-- Navigation and Submit Controls -->
+        <div class="nav-actions-bar">
+            <div class="nav-group-left">
+                <button type="button" class="btn btn-secondary" onclick="prev()" id="prevBtn">
+                    Previous
+                </button>
+            </div>
 
-<div class="progress">
-    <div id="progressBar"></div>
-</div>
-</div>
+            <div class="nav-group-right">
+                <button type="button" class="btn btn-secondary" onclick="next()" id="nextBtn">
+                    Next
+                </button>
+                <button type="button" class="btn btn-submit" onclick="submitQuiz()" id="submitBtn">
+                    Submit Quiz
+                </button>
+            </div>
+        </div>
 
-</div>
+    </main>
 
-<script src="questions.js"></script>
-<script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>

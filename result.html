@@ -2,24 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Result</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
+    <main class="container result-card">
+        
+        <!-- Result Icon -->
+        <div class="result-icon-wrapper">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+            </svg>
+        </div>
 
-    <h1>Quiz Result</h1>
+        <div class="card-badge">Assessment Completed</div>
+        <h1 class="result-title">Quiz Result</h1>
+        <h2 id="user">Name: Candidate</h2>
 
-    <h2 id="user"></h2>
+        <!-- Score Presentation Box -->
+        <div class="score-box">
+            <span class="score-label">Final Examination Score</span>
+            <div id="score">0 / 50</div>
+            <div id="scorePercentage" class="score-percentage">0% Accuracy</div>
+        </div>
 
-    <h2 id="score"></h2>
+        <!-- Action Controls -->
+        <div class="result-actions">
+            <button type="button" class="btn btn-primary btn-block" onclick="gocertificate()">
+                Download Certificate
+            </button>
+            <a href="index.html" class="btn btn-outline btn-block">
+                Retake Assessment
+            </a>
+        </div>
 
-    <button onclick="gocertificate()">Download Certificate</button>
+    </main>
 
-</div>
-
-<script src="result.js"></script>
+    <!-- Scripts -->
+    <script src="questions.js"></script>
+    <script src="result.js"></script>
 
 </body>
 </html>

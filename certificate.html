@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certificate</title>
     <link rel="stylesheet" href="style.css">
 
@@ -10,17 +11,72 @@
 </head>
 <body>
 
-<div class="container">
+    <main class="container quiz-card-wide">
 
-    <h1>Certificate of Achievement</h1>
+        <div class="card-header">
+            <div class="card-badge">Verified Credential</div>
+            <h1>Certificate of Achievement</h1>
+            <p>Your official academic assessment certificate is ready for download.</p>
+        </div>
 
-    <p id="certText"></p>
+        <!-- Certificate Preview Frame -->
+        <div class="certificate-preview-card">
+            <div class="certificate-inner-frame">
+                
+                <div class="cert-logo-badge">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                        <path d="M4 22h16"></path>
+                        <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                    </svg>
+                    <span>Economics Academic Assessment</span>
+                </div>
 
-    <button onclick="downloadCertificate()">Download PDF</button>
+                <div class="cert-title">Certificate of Achievement</div>
+                <div class="cert-subtitle">Official State-Level Academic Evaluation</div>
 
-</div>
+                <p style="font-size:13px; color:var(--color-text-muted); margin-bottom:8px;">This is proudly presented to</p>
 
-<script src="certificate.js"></script>
+                <!-- Recipient Candidate Name -->
+                <div class="cert-recipient-name" id="certName">Candidate Name</div>
+
+                <!-- Narrative Text -->
+                <p id="certText">has successfully completed the Quiz Competition.</p>
+
+                <!-- Metadata Row -->
+                <div class="cert-meta-row">
+                    <div>Class: <strong id="certClass">--</strong></div>
+                    <div>Roll No: <strong id="certRoll">--</strong></div>
+                    <div>Score: <strong id="certScore">0 / 50</strong></div>
+                    <div>Date: <strong id="certDate">--</strong></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="certificate-actions">
+            <button type="button" class="btn btn-primary" onclick="downloadCertificate()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Download PDF
+            </button>
+            <a href="result.html" class="btn btn-secondary">
+                Back to Result
+            </a>
+            <a href="index.html" class="btn btn-outline">
+                Home
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Script -->
+    <script src="certificate.js"></script>
 
 </body>
 </html>
