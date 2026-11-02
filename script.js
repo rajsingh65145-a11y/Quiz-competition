@@ -185,7 +185,7 @@ const timerInterval = setInterval(() => {
     if (timeRemaining % 5 === 0) {
         try {
             localStorage.setItem("quizTimeRemaining", timeRemaining.toString());
-        } catch (e) {}
+        } catch (e) {}  
     }
 
     // Timeout condition
